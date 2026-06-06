@@ -46,5 +46,4 @@ The Vite build is written to `dist/`.
 - `src/components/` - Shared UI components.
 
 Google Fonts are intentionally loaded from Google-hosted URLs. SEO metadata
-currently points to `https://typescale.com/`; that URL can be replaced when the
-new production address is ready.
+points to `https://fapalz.github.io/typescale/`.
