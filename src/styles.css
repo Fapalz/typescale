@@ -1,0 +1,147 @@
+@import "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Source+Sans+Pro:ital,wght@0,200..900;1,200..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Raleway:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Work+Sans:ital,wght@0,100..900;1,100..900&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Manrope:wght@200..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,opsz,wght@0,6..144,400..900;1,6..144,400..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Vollkorn:ital,wght@0,400..900;1,400..900&family=Alegreya:ital,wght@0,400..900;1,400..900&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Oswald:wght@200..700&family=Bebas+Neue&family=Abril+Fatface&family=Righteous&family=Fredoka+One&family=Archivo+Black&family=Fira+Code:wght@300..700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Karla:ital,wght@0,200..800;1,200..800&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Quicksand:wght@300..700&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Heebo:wght@100..900&family=Cabin:ital,wght@0,400..700;1,400..700&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Arimo:ital,wght@0,400..700;1,400..700&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&family=Cousine:ital,wght@0,400;0,700;1,400;1,700&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Dosis:wght@200..800&family=Asap:ital,wght@0,100..900;1,100..900&family=Bitter:ital,wght@0,100..900;1,100..900&family=Oxygen:wght@300;400;700&family=Cantarell:ital,wght@0,400;0,700;1,400;1,700&family=Varela+Round&family=Comfortaa:wght@300..700&family=Dancing+Script:wght@400..700&family=Pacifico&family=Shadows+Into+Light&family=Amatic+SC:wght@400;700&family=Indie+Flower&family=Lobster&family=Great+Vibes&family=Sacramento&family=Satisfy&family=Kaushan+Script&display=swap";
+@import "tailwindcss";
+
+@source "./**/*.{html,js,jsx,ts,tsx}";
+@custom-variant dark (&:is(.dark *));
+
+@layer base {
+  html {
+    font-family: Inter, sans-serif;
+  }
+
+  *,
+  ::before,
+  ::after {
+    border-color: #e5e7eb;
+  }
+
+  body {
+    background-color: rgb(249 250 251);
+    color: rgb(17 24 39);
+    transition-property:
+      color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 0.2s;
+  }
+
+  .dark body {
+    background-color: rgb(31 41 55);
+    color: rgb(255 255 255);
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: rgb(243 244 246);
+  }
+
+  :is(.dark *)::-webkit-scrollbar-track {
+    background-color: rgb(31 41 55);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 9999px;
+    background-color: rgb(209 213 219);
+  }
+
+  :is(.dark *)::-webkit-scrollbar-thumb {
+    background-color: rgb(75 85 99);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(156 163 175);
+  }
+
+  :is(.dark *)::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(107 114 128);
+  }
+
+  .slider {
+    appearance: none;
+    height: 6px;
+    border-radius: 9999px;
+    background: linear-gradient(
+      to right,
+      #3b82f6 0%,
+      #3b82f6 var(--slider-progress, 50%),
+      #d1d5db var(--slider-progress, 50%),
+      #d1d5db 100%
+    );
+    cursor: pointer;
+  }
+
+  :is(.dark *) .slider {
+    background: linear-gradient(
+      to right,
+      #3b82f6 0%,
+      #3b82f6 var(--slider-progress, 50%),
+      #4b5563 var(--slider-progress, 50%),
+      #4b5563 100%
+    );
+  }
+
+  .slider:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+
+  .slider::-webkit-slider-runnable-track {
+    height: 6px;
+    border-radius: 9999px;
+    background: transparent;
+  }
+
+  .slider::-webkit-slider-thumb {
+    appearance: none;
+    margin-top: -5px;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: #3b82f6;
+    cursor: pointer;
+    border: 2px solid #ffffff;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 0.1);
+  }
+
+  .slider::-moz-range-track {
+    height: 6px;
+    border-radius: 9999px;
+    background: #d1d5db;
+  }
+
+  :is(.dark *) .slider::-moz-range-track {
+    background: #4b5563;
+  }
+
+  .slider::-moz-range-progress {
+    height: 6px;
+    border-radius: 9999px;
+    background: #3b82f6;
+  }
+
+  .slider::-moz-range-thumb {
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: #3b82f6;
+    cursor: pointer;
+    border: 2px solid #ffffff;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 0.1);
+  }
+
+  input:focus,
+  select:focus,
+  textarea:focus,
+  button:focus {
+    outline: none;
+  }
+
+  * {
+    transition-property: background-color, border-color, color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 0.2s;
+  }
+}
