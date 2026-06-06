@@ -4,6 +4,7 @@ import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   root: "src",
+  base: "/typescale/",
   plugins: [react(), tailwindcss()],
   build: {
     outDir: "../dist",
