@@ -1,19 +1,28 @@
 # Type Scale
 
-Type Scale is a typography system tool for creating, previewing, and exporting
-responsive type scales. It includes controls for font families, scale ratios,
-fluid typography, line height, letter spacing, semantic names, and export
-formats for design and development workflows.
+Use the tool here: [Type Scale](https://fapalz.github.io/typescale/)
+
+Type Scale is a browser-based toolkit for building practical design-system
+tokens. It helps designers and developers create typography scales, preview how
+they behave across real layouts, and export the result for web, mobile, and
+design-tool workflows.
+
+The main tool focuses on type scale generation: choose a font family, base size,
+scale ratio, units, line height, letter spacing, semantic names, and fluid
+typography strategy. The app also includes supporting generators for color
+palettes, nested border radius, shadows, and icon sizing.
 
 ## Features
 
-- Generate modular type scales from a base size and scale ratio.
-- Preview static and fluid typography across viewport ranges.
-- Protect smaller text sizes when large ratios would make them too small.
-- Customize line height, letter spacing, semantic names, and preview text.
-- Export typography tokens for CSS, SCSS, JSON, iOS, Android, Flutter, React
-  Native, and Figma.
-- Includes additional generators for color palettes, border radius, shadows,
+- Build modular type scales from a base size and ratio.
+- Generate responsive `clamp()` values with centered, mobile-first, and
+  desktop-first fluid strategies.
+- Protect small text sizes when large ratios would make captions too small.
+- Preview typography in device views and real-world page templates.
+- Edit semantic token names and export production-ready typography tokens.
+- Export CSS, SCSS, JSON, iOS Swift, Android Kotlin, Flutter Dart, React Native,
+  Design Tokens, Figma, and CLI config formats.
+- Create supporting tokens for color palettes, nested border radius, shadows,
   and icon sizes.
 
 ## Development
@@ -44,6 +53,3 @@ The Vite build is written to `dist/`.
 - `src/index.html` - Vite HTML entry file with metadata.
 - `src/tools/` - Main tool screens and modals.
 - `src/components/` - Shared UI components.
-
-Google Fonts are intentionally loaded from Google-hosted URLs. SEO metadata
-points to `https://fapalz.github.io/typescale/`.

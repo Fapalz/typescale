@@ -10,11 +10,11 @@ import {
 } from "lucide-react";
 
 const guideLinks = [
-  { id: "fundamentals", title: "Typography Fundamentals Guide" },
-  { id: "performance", title: "Web Font Performance Tips" },
-  { id: "accessibility", title: "Accessibility in Typography" },
-  { id: "responsive", title: "Responsive Typography Best Practices" },
-  { id: "design-systems", title: "Type Scale in Design Systems" },
+  { id: "guide-fundamentals", title: "Typography Fundamentals Guide" },
+  { id: "guide-performance", title: "Web Font Performance Tips" },
+  { id: "guide-accessibility", title: "Accessibility in Typography" },
+  { id: "guide-responsive", title: "Responsive Typography Best Practices" },
+  { id: "guide-design-systems", title: "Type Scale in Design Systems" },
 ];
 
 export function ToolLauncher({ onNavigate }) {
