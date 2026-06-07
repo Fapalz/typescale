@@ -706,8 +706,8 @@ function Toolbar({
   onTemplatePreview,
 }) {
   return (
-    <div className="flex items-center justify-between mb-6 sticky top-16 z-30 bg-gray-50 dark:bg-gray-800 py-4 -mx-6 px-6 border-b border-gray-200 dark:border-gray-700 shadow-sm">
-      <div className="flex items-center space-x-4">
+    <div className="flex items-center justify-between gap-2 mb-6 sticky top-16 z-30 bg-gray-50 dark:bg-gray-800 py-4 -mx-6 px-6 border-b border-gray-200 dark:border-gray-700 shadow-sm">
+      <div className="flex min-w-0 items-center gap-3 sm:gap-4">
         <label className="text-sm font-medium text-gray-700 dark:text-gray-300">
           Units:
         </label>
@@ -721,7 +721,7 @@ function Toolbar({
           <option value="pt">pt</option>
         </select>
         {settings.fluidTypography && (
-          <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
+          <span className="hidden max-w-32 truncate text-sm font-medium text-gray-700 dark:text-gray-300 sm:inline sm:max-w-none">
             Current:{" "}
             {settings.fluidPreviewMode === "min"
               ? `${settings.minViewport}px`
@@ -731,7 +731,7 @@ function Toolbar({
           </span>
         )}
       </div>
-      <div className="flex items-center space-x-2">
+      <div className="flex flex-shrink-0 items-center gap-2">
         <IconButton
           icon={Monitor}
           label="Device Preview"

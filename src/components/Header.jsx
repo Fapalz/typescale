@@ -1,4 +1,4 @@
-import { Heart, Menu, Moon, Sun, X } from "lucide-react";
+import { Menu, Moon, Sun, X } from "lucide-react";
 import { useState } from "react";
 import { toolCards } from "../tools/toolRegistry.jsx";
 
@@ -38,16 +38,6 @@ export function Header({ onNavigate, onTheme, isDark }) {
                 <span>{tool.title}</span>
               </button>
             ))}
-            <div className="w-px h-6 bg-gray-300 dark:bg-gray-600 mx-2" />
-            <a
-              href="https://ko-fi.com/typescale"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center space-x-2 px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors duration-200"
-            >
-              <Heart className="w-4 h-4" />
-              <span>Say Thanks</span>
-            </a>
             <button
               type="button"
               onClick={onTheme}
@@ -103,16 +93,6 @@ export function Header({ onNavigate, onTheme, isDark }) {
                 {isDark ? "Light Mode" : "Dark Mode"}
               </span>
             </button>
-            <a
-              href="https://ko-fi.com/typescale"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => setMobileOpen(false)}
-              className="w-full flex items-center justify-center space-x-2 px-4 py-3 text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors duration-200 font-medium mt-4"
-            >
-              <Heart className="w-5 h-5" />
-              <span>Say Thanks</span>
-            </a>
           </nav>
         )}
       </div>

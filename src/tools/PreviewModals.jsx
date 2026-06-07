@@ -137,8 +137,8 @@ export function TemplatePreviewModal({ typeScale, settings, onClose }) {
       subtitle="See your typography in real-world applications"
       onClose={onClose}
     >
-      <div className="flex items-center justify-between border-b border-gray-200 dark:border-gray-700 px-6">
-        <div className="flex overflow-x-auto">
+      <div className="border-b border-gray-200 dark:border-gray-700 p-3 sm:flex sm:items-center sm:justify-between sm:px-6 sm:py-0">
+        <div className="-mx-3 flex overflow-x-auto px-3 sm:mx-0 sm:min-w-0 sm:flex-1 sm:px-0">
           {templates.map((item) => (
             <TabButton
               key={item.id}
@@ -148,30 +148,11 @@ export function TemplatePreviewModal({ typeScale, settings, onClose }) {
             />
           ))}
         </div>
-        <div className="flex items-center space-x-2 ml-6">
-          <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
+        <div className="mt-3 flex items-center justify-between gap-3 rounded-xl bg-gray-50 p-2 dark:bg-gray-800/70 sm:mt-0 sm:ml-6 sm:flex-shrink-0 sm:justify-start sm:rounded-none sm:bg-transparent sm:p-0 sm:dark:bg-transparent">
+          <span className="hidden text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400 sm:inline sm:text-sm sm:font-medium sm:normal-case sm:tracking-normal sm:text-gray-700 sm:dark:text-gray-300">
             View:
           </span>
-          <div className="flex bg-gray-100 dark:bg-gray-800 rounded-lg p-1">
-            {[
-              ["desktop", "Desktop", Monitor],
-              ["mobile", "Mobile", Smartphone],
-            ].map(([id, label, Icon]) => (
-              <button
-                key={id}
-                type="button"
-                onClick={() => setView(id)}
-                className={`flex items-center space-x-2 px-3 py-1 text-sm font-medium rounded-md ${
-                  view === id
-                    ? "bg-white dark:bg-gray-700 text-gray-900 dark:text-white shadow-sm"
-                    : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
-                } transition-colors duration-200`}
-              >
-                <Icon className="w-4 h-4" />
-                <span>{label}</span>
-              </button>
-            ))}
-          </div>
+          <ViewToggle view={view} onChange={setView} />
         </div>
       </div>
       <div className="flex-1 overflow-auto bg-gray-50 dark:bg-gray-800">
@@ -253,10 +234,10 @@ export function ReadabilityPanel({ typeScale, settings }) {
 
 function Modal({ title, subtitle, onClose, children }) {
   return (
-    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-      <div className="bg-white dark:bg-gray-900 rounded-lg shadow-xl w-full max-w-7xl h-[90vh] flex flex-col transition-colors duration-200">
-        <div className="flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-700">
-          <div>
+    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-2 sm:p-4">
+      <div className="bg-white dark:bg-gray-900 rounded-lg shadow-xl w-full max-w-7xl h-[94vh] sm:h-[90vh] flex flex-col transition-colors duration-200">
+        <div className="flex items-start justify-between gap-3 p-4 sm:p-6 border-b border-gray-200 dark:border-gray-700">
+          <div className="min-w-0">
             <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
               {title}
             </h2>
@@ -274,6 +255,31 @@ function Modal({ title, subtitle, onClose, children }) {
         </div>
         {children}
       </div>
+    </div>
+  );
+}
+
+function ViewToggle({ view, onChange }) {
+  return (
+    <div className="grid flex-1 grid-cols-2 rounded-lg bg-gray-100 p-1 dark:bg-gray-800 sm:flex sm:flex-none">
+      {[
+        ["desktop", "Desktop", Monitor],
+        ["mobile", "Mobile", Smartphone],
+      ].map(([id, label, Icon]) => (
+        <button
+          key={id}
+          type="button"
+          onClick={() => onChange(id)}
+          className={`flex items-center justify-center space-x-2 rounded-md px-3 py-1.5 text-sm font-medium sm:py-1 ${
+            view === id
+              ? "bg-white text-gray-900 shadow-sm dark:bg-gray-700 dark:text-white"
+              : "text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
+          } transition-colors duration-200`}
+        >
+          <Icon className="w-4 h-4" />
+          <span>{label}</span>
+        </button>
+      ))}
     </div>
   );
 }

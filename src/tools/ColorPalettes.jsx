@@ -305,7 +305,7 @@ export function ColorPalettes({ onBack }) {
               <p className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                 Preview 10-Step Scale:
               </p>
-              <div className="grid grid-cols-10 gap-2">
+              <div className="grid grid-cols-5 gap-2 sm:grid-cols-10">
                 {preview?.h !== undefined &&
                   tonalSteps.map((item) => (
                     <div key={item.step} className="space-y-1">
