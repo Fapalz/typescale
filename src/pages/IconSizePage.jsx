@@ -3,8 +3,6 @@ import {
   ArrowLeft,
   Bell,
   Box,
-  Check,
-  Copy,
   Palette,
   Search,
   Settings,
@@ -12,8 +10,9 @@ import {
   Star,
   Type,
 } from "lucide-react";
-import { copyText, downloadText } from "../utils.js";
-import { ExportCard } from "./SharedExportCard.jsx";
+import { copyText, downloadText } from "../shared/lib/files.js";
+import { ExportCard } from "../shared/components/ExportCard.jsx";
+import { TokenValueList } from "../shared/components/TokenValueList.jsx";
 
 const iconNames = [
   "xs",
@@ -29,7 +28,7 @@ const iconNames = [
 ];
 const previewIcons = [Type, Palette, Box, Shapes, Search, Settings, Bell, Star];
 
-export function IconSizeTool({ onBack }) {
+export function IconSizePage({ onBack }) {
   const [baseSize, setBaseSize] = useState(20);
   const [scaleRatio, setScaleRatio] = useState(1.25);
   const [steps, setSteps] = useState(7);
@@ -71,10 +70,16 @@ export function IconSizeTool({ onBack }) {
     null,
     2,
   );
+  const sizeTokenItems = sizes.map(({ name, label, value }) => ({
+    id: name,
+    label,
+    code: `--icon-${name}: ${value}px`,
+    copyValue: `${value}px`,
+  }));
 
-  async function copyToken(name, value) {
-    await copyText(`${value}px`);
-    setCopiedToken(name);
+  async function copyToken(item) {
+    await copyText(item.copyValue);
+    setCopiedToken(item.id);
     window.setTimeout(() => setCopiedToken(null), 2000);
   }
 
@@ -204,38 +209,15 @@ export function IconSizeTool({ onBack }) {
           </section>
         </div>
 
-        <section className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-700 p-6 mb-8">
-          <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
-            Size Tokens
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
-            {sizes.map(({ name, label, value }) => (
-              <div
-                key={name}
-                className="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-800 rounded-lg"
-              >
-                <div>
-                  <div className="font-medium text-gray-900 dark:text-white">
-                    {label}
-                  </div>
-                  <code className="text-sm text-gray-600 dark:text-gray-400">
-                    --icon-{name}: {value}px
-                  </code>
-                </div>
-                <button
-                  onClick={() => copyToken(name, value)}
-                  className="p-1 text-gray-500 hover:text-gray-700 dark:hover:text-gray-300"
-                >
-                  {copiedToken === name ? (
-                    <Check className="w-4 h-4 text-green-500" />
-                  ) : (
-                    <Copy className="w-4 h-4" />
-                  )}
-                </button>
-              </div>
-            ))}
-          </div>
-        </section>
+        <div className="mb-8">
+          <TokenValueList
+            title="Size Tokens"
+            items={sizeTokenItems}
+            copiedId={copiedToken}
+            onCopy={copyToken}
+            listClassName="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3"
+          />
+        </div>
 
         <div className="grid md:grid-cols-2 gap-6 mb-8">
           <ExportCard

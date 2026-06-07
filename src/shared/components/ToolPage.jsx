@@ -1,5 +1,5 @@
 import { ArrowLeft, Copy, Download } from "lucide-react";
-import { copyText, downloadText } from "../utils.js";
+import { copyText, downloadText } from "../lib/files.js";
 
 export function ToolPage({ title, intro, onBack, children }) {
   return (

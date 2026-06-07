@@ -11,17 +11,5 @@ export default defineConfig({
     emptyOutDir: true,
     sourcemap: true,
     assetsDir: "assets",
-    rollupOptions: {
-      output: {
-        entryFileNames: "assets/index-52XAjouG.js",
-        chunkFileNames: "assets/[name].js",
-        assetFileNames: (assetInfo) => {
-          if (assetInfo.name?.endsWith(".css")) {
-            return "assets/index-OkXB-BDf.css";
-          }
-          return "assets/[name][extname]";
-        },
-      },
-    },
   },
 });

@@ -8,7 +8,7 @@ import {
   Tablet,
   X,
 } from "lucide-react";
-import { getPreviewText } from "../utils.js";
+import { getPreviewText } from "../lib/utils.js";
 
 const devices = [
   { id: "desktop", name: "Desktop", width: 1440, height: 900, icon: Monitor },

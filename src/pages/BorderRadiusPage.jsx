@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
 import { ArrowLeft } from "lucide-react";
-import { downloadText, copyText } from "../utils.js";
-import { ExportCard } from "./SharedExportCard.jsx";
+import { copyText, downloadText } from "../shared/lib/files.js";
+import { ExportCard } from "../shared/components/ExportCard.jsx";
 
 const layerStyles = [
   "bg-blue-500/20 dark:bg-blue-500/30 border-blue-500",
@@ -16,7 +16,7 @@ const layerStyles = [
   "bg-teal-500/20 dark:bg-teal-500/30 border-teal-500",
 ];
 
-export function BorderRadiusTool({ onBack }) {
+export function BorderRadiusPage({ onBack }) {
   const [outerRadius, setOuterRadius] = useState(24);
   const [padding, setPadding] = useState(8);
   const [layers, setLayers] = useState(4);

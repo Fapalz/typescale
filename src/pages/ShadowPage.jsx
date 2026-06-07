@@ -1,9 +1,10 @@
 import { useMemo, useState } from "react";
-import { ArrowLeft, Check, Copy } from "lucide-react";
-import { copyText, downloadText } from "../utils.js";
-import { ExportCard } from "./SharedExportCard.jsx";
+import { ArrowLeft } from "lucide-react";
+import { copyText, downloadText } from "../shared/lib/files.js";
+import { ExportCard } from "../shared/components/ExportCard.jsx";
+import { TokenValueList } from "../shared/components/TokenValueList.jsx";
 
-export function ShadowTool({ onBack }) {
+export function ShadowPage({ onBack }) {
   const [steps, setSteps] = useState(5);
   const [baseX, setBaseX] = useState(0);
   const [baseY, setBaseY] = useState(1);
@@ -48,10 +49,16 @@ export function ShadowTool({ onBack }) {
     null,
     2,
   );
+  const cssValueItems = shadows.map(({ step, cssValue }) => ({
+    id: step,
+    label: `Step ${step}`,
+    code: `box-shadow: ${cssValue};`,
+    copyValue: cssValue,
+  }));
 
-  async function copyStep(step, text) {
-    await copyText(text);
-    setCopiedStep(step);
+  async function copyStep(item) {
+    await copyText(item.copyValue);
+    setCopiedStep(item.id);
     window.setTimeout(() => setCopiedStep(null), 2000);
   }
 
@@ -97,6 +104,7 @@ export function ShadowTool({ onBack }) {
               </h2>
               <div className="grid md:grid-cols-2 gap-4">
                 <Field
+                  className="md:col-span-2"
                   label="Number of Steps"
                   helper="How many elevation levels to generate (1-10)"
                   value={steps}
@@ -133,6 +141,7 @@ export function ShadowTool({ onBack }) {
                   onChange={setBaseSpread}
                 />
                 <Field
+                  className="md:col-span-2"
                   label="Base Opacity"
                   helper="Starting opacity (0-1)"
                   value={baseOpacity}
@@ -210,33 +219,12 @@ export function ShadowTool({ onBack }) {
               </div>
             </section>
 
-            <section className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-700 p-6">
-              <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
-                CSS Values
-              </h2>
-              <div className="space-y-3">
-                {shadows.map(({ step, cssValue }) => (
-                  <div
-                    key={step}
-                    className="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-800 rounded-lg"
-                  >
-                    <code className="text-sm text-gray-700 dark:text-gray-300 break-all">
-                      box-shadow: {cssValue};
-                    </code>
-                    <button
-                      onClick={() => copyStep(step, cssValue)}
-                      className="ml-2 p-1 text-gray-500 hover:text-gray-700 dark:hover:text-gray-300"
-                    >
-                      {copiedStep === step ? (
-                        <Check className="w-4 h-4 text-green-500" />
-                      ) : (
-                        <Copy className="w-4 h-4" />
-                      )}
-                    </button>
-                  </div>
-                ))}
-              </div>
-            </section>
+            <TokenValueList
+              title="CSS Values"
+              items={cssValueItems}
+              copiedId={copiedStep}
+              onCopy={copyStep}
+            />
           </div>
         </div>
 
@@ -298,9 +286,18 @@ export function ShadowTool({ onBack }) {
   );
 }
 
-function Field({ label, helper, value, min, max, step = 1, onChange }) {
+function Field({
+  className = "",
+  label,
+  helper,
+  value,
+  min,
+  max,
+  step = 1,
+  onChange,
+}) {
   return (
-    <div>
+    <div className={className}>
       <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
         {label}
       </label>

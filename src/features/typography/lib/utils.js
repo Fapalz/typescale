@@ -1,4 +1,4 @@
-import { typeTokens } from "./data.js";
+import { typeTokens } from "../data/data.js";
 
 export function calculateTypeScale(settings) {
   const baseTokens = typeTokens.map((token) => buildToken(token, settings));
@@ -323,6 +323,20 @@ export function getFluidScaleRatios(settings) {
   };
 }
 
+export function fluidSizeAtViewport(item, settings, viewport) {
+  if (!item.minFontSize || !item.maxFontSize) return item.fontSize;
+  const minViewport = Number(settings.minViewport) || 320;
+  const maxViewport = Number(settings.maxViewport) || 1200;
+  const progress = Math.min(
+    1,
+    Math.max(
+      0,
+      (viewport - minViewport) / Math.max(1, maxViewport - minViewport),
+    ),
+  );
+  return item.minFontSize + (item.maxFontSize - item.minFontSize) * progress;
+}
+
 function applySmallTextProtection(scale, settings) {
   if (!settings.protectSmallText) return scale;
 
@@ -533,20 +547,4 @@ function androidWeight(weight) {
   if (weight >= 500) return "Medium";
   if (weight <= 300) return "Light";
   return "Normal";
-}
-
-export async function copyText(text) {
-  await navigator.clipboard?.writeText(text);
-}
-
-export function downloadText(filename, text) {
-  const blob = new Blob([text], { type: "text/plain" });
-  const url = URL.createObjectURL(blob);
-  const link = document.createElement("a");
-  link.href = url;
-  link.download = filename;
-  document.body.appendChild(link);
-  link.click();
-  link.remove();
-  URL.revokeObjectURL(url);
 }

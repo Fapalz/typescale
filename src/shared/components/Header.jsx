@@ -1,6 +1,6 @@
 import { Menu, Moon, Sun, X } from "lucide-react";
 import { useState } from "react";
-import { toolCards } from "../tools/toolRegistry.jsx";
+import { toolCards } from "../../features/toolsRegistry.jsx";
 
 export function Header({ onNavigate, onTheme, isDark }) {
   const [mobileOpen, setMobileOpen] = useState(false);
