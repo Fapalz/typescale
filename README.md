@@ -49,7 +49,14 @@ The Vite build is written to `dist/`.
 
 ## Project Structure
 
-- `src/` - React source, styles, data, and utility functions.
 - `src/index.html` - Vite HTML entry file with metadata.
-- `src/tools/` - Main tool screens and modals.
-- `src/components/` - Shared UI components.
+- `src/main.jsx` - React app bootstrap.
+- `src/app/` - App shell and route configuration.
+- `src/pages/` - Top-level pages for the individual tools.
+- `src/features/` - Feature-specific UI, data, and business logic.
+- `src/features/typography/` - Typography scale components, modals, data, and export logic.
+- `src/features/color-palettes/` - Color palette data and generation logic.
+- `src/features/guides/` - Typography guide content and guide page UI.
+- `src/shared/` - Reusable components and utilities used across pages.
+- `src/public/` - Static assets copied to the build root, including the Open Graph image.
+- `src/styles.css` - Tailwind import and custom global styles.
